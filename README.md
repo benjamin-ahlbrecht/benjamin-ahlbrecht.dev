@@ -15,12 +15,12 @@ You can deploy `benjamin-ahlbrecht.dev` directly from source with or without Doc
 
 ```bash
 # Via SSH
-git clone git@gitlab.com:ahlbrecht-machine-learning/site.git
-cd 'site/'
+git clone git@github.com:benjamin-ahlbrecht/benjamin-ahlbrecht.dev.git
+cd 'benjamin-ahlbrecht.dev/'
 
 # Or, via HTTPS
-git clone https://gitlab.com/ahlbrecht-machine-learning/site.git
-cd 'site/'
+git clone https://github.com/benjamin-ahlbrecht/benjamin-ahlbrecht.dev.git
+cd 'benjamin-ahlbrecht.dev/'
 ```
 
 ### Docker Deployment (Preferred)
