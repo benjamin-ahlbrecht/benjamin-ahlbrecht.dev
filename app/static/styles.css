@@ -1,0 +1,510 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Cinzel&display=swap");
+
+:root {
+  --color-text: #212121;
+  --color-text-bright: #ffffff;
+  --color-bright: #f1f1f1;
+  --color-gray: #202020;
+  --color-dark: #121212;
+  --color-reference: #484848;
+  --color-blue-bright: #a5c9ff;
+  --color-blue: #599bff;
+  --color-blue-dark: #004f90;
+
+  --golden-ratio-vh: 61.8vh;
+  --golden-ratio-vw: 61.8vw;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-blue);
+  font-size: inherit;
+  font-family: inherit;
+}
+
+a.simple {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cinzel", serif;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 56px;
+}
+h2 {
+  font-size: 38px;
+}
+h3 {
+  font-size: 26px;
+}
+h4 {
+  font-size: 22px;
+}
+h5 {
+  font-size: 22px;
+}
+h6 {
+  font-size: 22px;
+}
+p {
+  color: var(--color-text);
+  font-size: 20px;
+  font-family: "Barlow", sans-serif;
+  line-height: 1.5;
+}
+
+ul > li,
+ol > li {
+  color: var(--color-text);
+  font-size: 20px;
+  font-family: "Barlow", sans-serif;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* HEADER CONIFG */
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+
+  width: 100vw;
+  min-height: var(--golden-ratio-vh);
+
+  font-variant: small-caps;
+  font-family: "Cinzel", serif;
+
+  color: var(--color-text-bright);
+  background-color: var(--color-dark);
+
+  margin-bottom: 20px;
+}
+
+#header-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  font-size: 20px;
+
+  width: 100vw;
+  height: 75px;
+}
+
+#header-name {
+  font-size: 24px;
+}
+
+#header-links > li {
+  display: inline;
+  list-style-type: none;
+
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  margin: 20px;
+}
+
+.header-link {
+  transition: all 0.25s ease-in-out;
+  color: inherit;
+  padding: 10px 20px;
+}
+.header-link:hover {
+  color: var(--color-blue-bright);
+}
+
+#header-main {
+  margin: auto 0;
+  padding: 0 20%;
+  font-weight: 300;
+}
+
+#header-main > h1 {
+  text-align: center;
+  font-variant: normal;
+  font-weight: inherit;
+  margin: 5px;
+  padding: 0;
+
+  opacity: 0;
+  transition: opacity 1s ease-in-out 0s;
+}
+
+#header-main > p {
+  display: block;
+  text-align: center;
+  font-size: 28px;
+  font-weight: inherit;
+  font-family: "Cinzel", serif;
+
+  margin: 5px;
+  padding: 0;
+
+  opacity: 0;
+  transition: color 1s ease-in-out 0.75s, opacity 0.5s ease-in-out 0.5s;
+}
+
+#header-hamburger {
+  display: none;
+}
+
+#header-hamburger-menu {
+  width: 20px;
+  height: 3px;
+  border-radius: 1.5px;
+  background: #ffffff;
+  transition: all 0.5s ease-in-out;
+}
+
+#header-hamburger-menu::before,
+#header-hamburger-menu::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 3px;
+  border-radius: 1.5px;
+  background: #ffffff;
+  transition: all 0.5 ease-in-out;
+}
+
+#header-hamburger-menu::before {
+  transform: translateY(-8px);
+}
+#header-hamburger-menu::after {
+  transform: translateY(8px);
+}
+
+.open-hamburger #header-hamburger-menu {
+  transform: rotateZ(270deg);
+  background-color: transparent;
+}
+
+.open-hamburger #header-hamburger-menu::before {
+  transform: rotate(45deg);
+  background: var(--color-blue-bright);
+}
+
+.open-hamburger #header-hamburger-menu::after {
+  transform: rotate(-45deg);
+  background: var(--color-blue-bright);
+}
+
+#header-nav-mobile {
+  background-color: var(--color-dark);
+  text-align: center;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease-in-out;
+}
+
+#header-nav-mobile > div > a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  color: inherit;
+}
+
+#header-nav-mobile > div:hover {
+  background-color: var(--color-gray);
+  transition: background-color 0.5s ease-in;
+}
+
+#header-nav-mobile > div:not(:hover) {
+  background-color: var(--color-dark);
+  transition: background-color 0.5s ease-out;
+}
+
+.header-contact {
+  color: inherit;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 10px;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.header-contact:hover {
+  color: var(--color-blue-bright);
+}
+
+/* FOOTER CONFIG */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+  width: 100vw;
+  height: 75px;
+  background-color: var(--color-dark);
+}
+
+.footer-icon {
+  color: var(--color-blue-bright);
+  padding: 20px;
+}
+
+.footer-icon:hover {
+  color: white;
+  scale: 1.25;
+  transition: 0.5s;
+}
+
+.footer-icon:not(:hover) {
+  scale: 1;
+  transition: 1s;
+}
+
+/* MAIN CONFIG */
+main {
+  margin: 0 auto;
+  padding: 0 0 50px 20px;
+  border-left: 1px solid gray;
+
+  width: var(--golden-ratio-vw);
+  min-height: calc(100vh - var(--golden-ratio-vh));
+}
+
+/* PROJECT CARD CONFIG */
+.project-card {
+  display: flex;
+  flex-direction: row;
+
+  padding: 20px;
+  border-bottom: 1px solid gray;
+  width: 100%;
+}
+
+.project-card-meta {
+  min-width: 150px;
+}
+
+.project-card-main {
+  width: 500px;
+  margin-right: 10px;
+}
+
+.project-card-main > h3 {
+  font-weight: bold;
+  color: var(--color-dark);
+  margin: 0;
+  transition: all 0.25s;
+  font-size: 22px;
+}
+
+.project-card-main:hover > h3 {
+  color: var(--color-blue);
+}
+
+.project-card-main > p {
+  color: var(--color-reference);
+}
+
+.project-card-code {
+  display: inline-block;
+  background-color: var(--color-blue-dark);
+
+  font-size: 18px;
+
+  margin-top: 30px;
+  padding: 5px;
+  border-radius: 10px;
+
+  transition: 0.5s;
+}
+
+.project-card-code > p {
+  color: var(--color-bright);
+  margin: 0;
+  padding: 0;
+}
+
+.project-card-code:hover {
+  padding:7px;
+}
+
+.project-card-inner {
+  display: flexbox;
+  flex-direction: row;
+}
+
+.project-card-link {
+  color: var(--color-dark);
+}
+
+.project-card-date {
+  font-size: 18px;
+  color: var(--color-reference);
+  margin: 0;
+  padding: 0;
+}
+
+.project-card-title {
+  margin: 0;
+  padding: 0;
+}
+
+.project-card-image {
+  border-radius: 5px;
+  max-height: 225px;
+}
+
+ol.references > li {
+  color: var(--color-reference);
+  padding: 5px;
+  margin: 0;
+}
+
+
+.reference {
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+/* MEDIA QUERIES */
+@media all and (max-width: 1200px) {
+  .project-card-image {
+    float: left;
+    max-width: 67%;
+  }
+  
+  #header-hamburger {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 30px;
+    height: 30px;
+ 
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+  }
+
+  #header-main {
+    padding: 0;
+  }
+
+  #header-links {
+    display: none;
+  }
+
+  main {
+    width: 95vw;
+    border: none;
+  }
+
+  .project-card {
+    flex-direction: column !important;
+    padding-left: 0;
+    padding-top: 0;
+  }
+
+  .project-card-main {
+    max-width: 80vw;
+  }
+
+  .project-card-meta {
+    margin-bottom: 8px;
+  }
+
+  .project-card-code:hover {
+    padding: 5px;
+  }
+
+  .project-card-date {
+    display: inline;
+    margin-right: 50px !important;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  h4, h5, h6 {
+    font-size: 18px;
+  }
+
+  p, ul > li, ol > li, a, td {
+    font-size: 16px;
+  }
+
+  /* Remove equation number when we have a small screen, so numbers don't overlap */
+  .katex-html .tag {
+    display: none;
+  }
+
+  .katex-display {
+    overflow: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 5px 0;
+  }
+}
+
+img {
+  width: min(800px, 100%);
+  margin: 0;
+  padding: 0;
+}
+
+
+figure {
+  color: var(--color-reference);
+  font-size: 16px;
+  border-bottom: 1px solid black;
+  max-width: min(800px, 100%);
+  margin-bottom: 30px;
+}
+
+pre code {
+  font-size: 16px;
+}
+
+
+table {
+  margin: 0 auto;
+  border-spacing: 10px;
+}
+
+tr {
+  border-bottom: 1px solid black;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(245, 245, 245); 
+}
+
+tr:hover:nth-child(n + 2) {
+  background-color: rgb(225, 225, 225);
+}
+
+td, th {
+  padding: 8px;
+}

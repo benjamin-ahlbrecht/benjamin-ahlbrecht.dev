@@ -1,0 +1,58 @@
+/* CAM IMAGE GALLERY */
+.gallery-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.gallery {
+    width: min(900px, 100%);
+}
+
+.gallery-buttons {
+    margin: 0 20px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+    border-bottom: 1px solid black;
+}
+
+#gallery-previous {
+    font-size: 26px;
+    transition: 0.25s;
+    cursor: pointer;
+    user-select: none;
+}
+
+#gallery-next {
+    font-size: 26px;
+    transition: 0.25s;
+    cursor: pointer;
+    user-select: none;
+}
+
+#gallery-previous:hover {
+    color: var(--color-blue);
+}
+
+#gallery-next:hover {
+    color: var(--color-blue);
+}
+
+#gallery-id {
+    font-size: 22px;
+}
+
+@media all and (max-width: 900px) {
+    .gallery-buttons { padding: 0; }
+    #gallery-previous { font-size: 16px; }
+    #gallery-next { font-size: 16px; }
+    #gallery-id { font-size: 16px; }    
+}
+
+#cmatrices {
+    display: flex;
+    justify-content: space-between;
+}
+
+#eval-metrics td:first-child, #eval-metrics th:first-child {
+    border-right: 1px solid black;
+}

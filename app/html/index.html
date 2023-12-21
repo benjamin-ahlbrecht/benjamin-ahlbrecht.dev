@@ -1,0 +1,17 @@
+{% extends "template.html" %} {% block content %}
+<h2>Projects</h2>
+{% for project in projects %}
+<section class="project-card">
+  <div class="project-card-meta">
+    <p class="project-card-date">{{ project.date }}</p>
+    <a href="{{ project.git_url }}" class="project-card-code" target="_blank">
+      <p><i class="fa-brands fa-gitlab"></i> Code</p>
+    </a>
+  </div>
+  <a href="/projects/{{ project.fpath }}" class="project-card-main">
+    <h3>{{ project.title }}</h3>
+    <p>{{ project.subtitle }}</p>
+  </a>
+  <img class="project-card-image" src="/assets/project-images/{{ project.image_fpath }}" alt="{{ project.image_description }}">
+</section>
+{% endfor %} {% endblock content %}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">  
+    <link rel="stylesheet" href="/static/styles.css" />
+    {% block stylesheets %}{% endblock %}
+
+    <!-- FontAwesome -->
+    <script
+      src="https://kit.fontawesome.com/c640195d93.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- KaTeX Mathematical Typesetting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow&family=Cinzel&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="/scripts/fadeIns.js"></script>
+    <!-- Title -->
+    <title>Benjamin Ahlbrecht - {{ tag }}</title>
+  </head>
+  <body>
+    <!-- HEADER BEGIN -->
+    <header>
+      <section id="header-nav">
+        <div id="header-name">
+          <a href="/" class="header-link">Benjamin Ahlbrecht</a>
+        </div>
+        <div>
+          <ul id="header-links">
+            <li><a href="/" class="header-link">Home</a></li>
+            <li><a href="/about" class="header-link">About</a></li>
+            <li>
+              <a href="/contact" class="header-contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Hidden hamburger menu for small screens -->
+        <div id="header-hamburger"><div id="header-hamburger-menu"></div></div>
+      </section>
+
+      <!-- Header navigation toggle for small screens -->
+      <section id="header-nav-mobile">
+        <div><a href="/">Home</a></div>
+        <div><a href="/about">About</a></div>
+        <div><a href="/contact">Contact</a></div>
+      </section>
+
+      <!-- Header Body -->
+      <section id="header-main">
+        <h1>{{ title }}</h1>
+        <p>{{ subtitle }}</p>
+      </section>
+    </header>
+
+    <!-- CONTENT BEGIN -->
+    <main>{% block content %}{% endblock %}</main>
+
+    <!-- FOOTER BEGIN -->
+    <footer>
+      <div>
+        <a
+          target="_blank"
+          href="https://www.linkedin.com/in/benjamin-ahlbrecht"
+        >
+          <i class="fa-brands fa-linkedin-in fa-l footer-icon"></i
+        ></a>
+      </div>
+      <div>
+        <a target="_blank" href="https://gitlab.com/benjamin-ahlbrecht/">
+          <i class="fa-brands fa-gitlab fa-l footer-icon"></i
+        ></a>
+      </div>
+      <div>
+        <a target="_blank" href="mailto:BenjaminAhlbrecht@gmail.com">
+          <i class="fa-solid fa-envelope fa-l footer-icon"></i
+        ></a>
+      </div>
+    </footer>
+  </body>
+
+  <!-- SCRIPTS -->
+  <script src="/scripts/hamburger.js"></script>
+</html>
