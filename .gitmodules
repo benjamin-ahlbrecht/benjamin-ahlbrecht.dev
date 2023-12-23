@@ -1,0 +1,3 @@
+[submodule "modules/Early-Breast-Cancer-Detection-and-Localization"]
+	path = modules/Early-Breast-Cancer-Detection-and-Localization
+	url = git@github.com:benjamin-ahlbrecht/Early-Breast-Cancer-Detection-and-Localization.git
